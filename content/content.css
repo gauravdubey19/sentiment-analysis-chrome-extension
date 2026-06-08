@@ -1,0 +1,73 @@
+/**
+ * SentiScope — Content Script Styles
+ * These styles are injected into the HOST page (not the shadow DOM).
+ * All selectors are prefixed with .sentiscope- to avoid conflicts.
+ */
+
+/* ─── FAB (Floating Action Button) ─────────────────────────────────────────── */
+
+.sentiscope-fab {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border-radius: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2147483646;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.45), 0 2px 8px rgba(0,0,0,0.3);
+  user-select: none;
+  white-space: nowrap;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: translateY(6px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sentiscope-fab--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.sentiscope-fab:hover {
+  box-shadow: 0 12px 35px rgba(168, 85, 247, 0.6), 0 4px 12px rgba(0,0,0,0.3);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.sentiscope-fab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.sentiscope-fab svg {
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+/* ─── Page Blur Effect ──────────────────────────────────────────────────────── */
+
+html.sentiscope-blur-active body > *:not(#sentiscope-overlay-host):not(.sentiscope-fab) {
+  filter: blur(5px) brightness(0.6) !important;
+  transition: filter 0.35s ease !important;
+  pointer-events: none !important;
+}
+
+html.sentiscope-blur-active body {
+  overflow: hidden !important;
+}
+
+/* ─── Text Highlight ────────────────────────────────────────────────────────── */
+
+.sentiscope-highlight {
+  border-radius: 3px !important;
+  padding: 0 2px !important;
+  transition: background 0.3s ease !important;
+}

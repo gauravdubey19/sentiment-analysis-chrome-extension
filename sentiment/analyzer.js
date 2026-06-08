@@ -11,7 +11,6 @@
  *   - breakdown: array of { word, score, reason } for key tokens
  */
 
-import { DIMINISHERS, INTENSIFIERS, LEXICON, NEGATION_WORDS } from "./context";
 
 // ─── Core Analysis Function ──────────────────────────────────────────────────
 

@@ -39,7 +39,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["sentiment/analyzer.js", "content/content.js"],
+      "js": ["sentiment/context.js", "sentiment/analyzer.js", "content/content.js"],
       "css": ["content/content.css"],
       "run_at": "document_idle"
     }

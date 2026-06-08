@@ -719,4 +719,3 @@ const NEGATION_WORDS = new Set([
   "losing",
 ]);
 
-export { LEXICON, INTENSIFIERS, DIMINISHERS, NEGATION_WORDS };

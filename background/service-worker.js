@@ -11,8 +11,7 @@
  * variables — everything lives in chrome.storage.
  */
 
-// Load the sentiment analyzer into the service worker global scope
-importScripts('../sentiment/analyzer.js');
+importScripts('../sentiment/context.js', '../sentiment/analyzer.js');
 
 
 // ─── Context Menu Setup ───────────────────────────────────────────────────────
